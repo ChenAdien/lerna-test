@@ -1,13 +1,16 @@
 {
   "name": "thermo-nano-components",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "scripts": {
     "dev": "vite",
     "build": "gulp",
     "preview": "vite preview"
   },
   "main": "./dist/esm/index.js",
-  "files": ["./package.json", "./dist/**"],
+  "files": [
+    "./package.json",
+    "./dist/**"
+  ],
   "dependencies": {
     "vue": "^3.2.25"
   },
