@@ -6,13 +6,10 @@
     "build": "gulp",
     "preview": "vite preview"
   },
+  "main": "./dist/esm/index.js",
   "dependencies": {
     "vue": "^3.2.25"
   },
-  "files": [
-    "./dist",
-    "./package.json"
-  ],
   "devDependencies": {
     "@esbuild-kit/cjs-loader": "^2.2.0",
     "@pnpm/types": "^8.4.0",
