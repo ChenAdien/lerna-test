@@ -1,5 +1,5 @@
 {
-  "name": "@thermo/nano-components",
+  "name": "thermo-nano-components",
   "version": "0.0.3",
   "scripts": {
     "dev": "vite",
@@ -34,5 +34,5 @@
     "vite": "^2.9.9",
     "vue-tsc": "^0.34.7"
   },
-  "gitHead": "dc30f3a30746bef5824d7080200a528746c39326"
+  "gitHead": "e3cd36f434d5fdd93bbe1029cbf53787a946396b"
 }
