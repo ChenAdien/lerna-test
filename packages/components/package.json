@@ -8,9 +8,7 @@
   },
   "main": "./dist/esm/index.js",
   "files": [
-    "./package.json",
-    "./dist/*",
-    "./dist/**/*"
+    "dist"
   ],
   "dependencies": {
     "vue": "^3.2.25"
