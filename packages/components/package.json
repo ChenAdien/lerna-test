@@ -1,5 +1,5 @@
 {
-  "name": "@nano/components",
+  "name": "nano-components",
   "version": "0.0.1",
   "scripts": {
     "dev": "vite",
@@ -33,5 +33,6 @@
     "unplugin-vue-define-options": "^0.6.1",
     "vite": "^2.9.9",
     "vue-tsc": "^0.34.7"
-  }
+  },
+  "gitHead": "970304fb99bd60fa5d2227b150bdc412ecc6c859"
 }
