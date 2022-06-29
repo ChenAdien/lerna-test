@@ -5,7 +5,7 @@
   "author": "Chen_Z <38248854+ChenAdien@users.noreply.github.com>",
   "homepage": "https://github.com/ChenAdien/lerna-test#readme",
   "license": "ISC",
-  "main": "lib/components.js",
+  "main": "dist/esm/index.js",
   "files": [
     "dist"
   ],
