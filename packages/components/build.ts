@@ -6,7 +6,7 @@ import { nodeResolve } from '@rollup/plugin-node-resolve'
 import styles from 'rollup-plugin-styles'
 // @ts-ignore
 import clear from 'rollup-plugin-clear'
-import { generateExternal } from './src/utils/index'
+import { generateExternal } from './utils/index'
 import json from '@rollup/plugin-json'
 
 // function testPlugin() {
@@ -34,15 +34,10 @@ export default async function build() {
       DefineOptions(),
       typescript({
         tsconfigOverride: {
-          include: [
-            './src/*.ts',
-            './src/**/*.ts',
-            './src/**/*.vue',
-            './types/*.d.ts',
-          ],
+          include: ['**/*'],
           compilerOptions: {
             module: 'ESNext',
-            declaration: true,
+            declaration: false,
           },
         },
       }),

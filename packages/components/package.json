@@ -1,38 +1,26 @@
 {
-  "name": "thermo-nano-components",
-  "version": "0.0.9",
-  "scripts": {
-    "dev": "vite",
-    "build": "gulp",
-    "preview": "vite preview"
-  },
-  "main": "./dist/esm/index.js",
+  "name": "@thermo-nano/components",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "Chen_Z <38248854+ChenAdien@users.noreply.github.com>",
+  "homepage": "https://github.com/ChenAdien/lerna-test#readme",
+  "license": "ISC",
+  "main": "lib/components.js",
   "files": [
     "dist"
   ],
-  "dependencies": {
-    "vue": "^3.2.25"
+  "publishConfig": {
+    "access": "public"
   },
-  "devDependencies": {
-    "@esbuild-kit/cjs-loader": "^2.2.0",
-    "@pnpm/types": "^8.4.0",
-    "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^13.3.0",
-    "@types/gulp": "^4.0.9",
-    "@vitejs/plugin-vue": "^2.3.3",
-    "cpr": "^3.0.1",
-    "gulp": "^4.0.2",
-    "rollup-plugin-clear": "^2.0.7",
-    "rollup-plugin-esbuild": "^4.9.1",
-    "rollup-plugin-styles": "^4.0.0",
-    "rollup-plugin-typescript2": "^0.32.1",
-    "sass": "^1.53.0",
-    "ts-morph": "^15.1.0",
-    "ts-node": "^10.8.1",
-    "typescript": "^4.5.4",
-    "unplugin-vue-define-options": "^0.6.1",
-    "vite": "^2.9.9",
-    "vue-tsc": "^0.34.7"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChenAdien/lerna-test.git"
   },
-  "gitHead": "e3cd36f434d5fdd93bbe1029cbf53787a946396b"
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "gulp"
+  },
+  "bugs": {
+    "url": "https://github.com/ChenAdien/lerna-test/issues"
+  }
 }

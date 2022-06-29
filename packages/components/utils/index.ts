@@ -1,5 +1,5 @@
 import type { ProjectManifest } from '@pnpm/types'
-import pkg from '../../package.json'
+import pkg from '../package.json'
 export const withInstall = <T, E extends Record<string, any>>(
   main: T,
   extra?: E

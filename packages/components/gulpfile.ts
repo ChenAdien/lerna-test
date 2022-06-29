@@ -6,8 +6,8 @@ async function copyTypes() {
   console.log('Start copy types')
 
   await cpr(
-    './types',
-    './dist/tpyes',
+    './global.d.ts',
+    './dist/tpyes/global.d.ts',
     {
       deleteFirst: true, //Delete "to" before
       overwrite: true, //If the file exists, overwrite it
@@ -33,4 +33,4 @@ function testType() {
   })
   project.addSourceFilesAtPaths(['./src/components'])
 }
-export default series(build)
+export default series(build, copyTypes)
