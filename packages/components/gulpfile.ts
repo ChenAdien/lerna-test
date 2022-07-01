@@ -7,7 +7,7 @@ async function copyTypes() {
   console.log('Start copy types')
 
   await cpr(
-    './global.d.ts',
+    './types/global.d.ts',
     './dist/tpyes/global.d.ts',
     {
       deleteFirst: true, //Delete "to" before
