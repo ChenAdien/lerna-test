@@ -2,6 +2,7 @@ import { series } from 'gulp'
 import build from './build'
 import cpr from 'cpr'
 import { Project } from 'ts-morph'
+import { generateTypesDefinitions } from './types-definitions'
 async function copyTypes() {
   console.log('Start copy types')
 

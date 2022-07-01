@@ -1,14 +1,14 @@
 import type { ProjectManifest } from '@pnpm/types'
+import type { Plugin } from 'vue'
 import pkg from '../package.json'
+type SFCWithInstall<T> = T & Plugin
 export const withInstall = <T, E extends Record<string, any>>(
   main: T,
   extra?: E
 ) => {
-  ;(main as any).install = (app: any): void => {
+  ;(main as SFCWithInstall<T>).install = (app): void => {
     for (const comp of [main, ...Object.values(extra ?? {})]) {
-      console.log(comp.__name)
-
-      app.component(comp.__name, comp)
+      app.component(comp.name, comp)
     }
   }
 
@@ -17,7 +17,7 @@ export const withInstall = <T, E extends Record<string, any>>(
       ;(main as any)[key] = comp
     }
   }
-  return main
+  return main as SFCWithInstall<T> & E
 }
 
 export const getPackageDependencies = (

@@ -1,6 +1,7 @@
 import { ModuleInfo, OutputOptions, rollup } from 'rollup'
 import vue from '@vitejs/plugin-vue'
 import typescript from 'rollup-plugin-typescript2'
+// @ts-ignore
 import DefineOptions from 'unplugin-vue-define-options/rollup'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import styles from 'rollup-plugin-styles'
@@ -8,6 +9,7 @@ import styles from 'rollup-plugin-styles'
 import clear from 'rollup-plugin-clear'
 import { generateExternal } from './utils/index'
 import json from '@rollup/plugin-json'
+import esbuild from 'rollup-plugin-esbuild'
 
 // function testPlugin() {
 //   return {
@@ -22,9 +24,10 @@ import json from '@rollup/plugin-json'
 //   }
 // }
 const outputOptions: OutputOptions = {
-  file: 'dist/esm/index.js',
   format: 'esm',
-  assetFileNames: '[name].[ext]',
+  dir: 'dist/esm',
+  preserveModules: true,
+  entryFileNames: '[name].mjs',
 }
 export default async function build() {
   const bundle = await rollup({
@@ -34,24 +37,27 @@ export default async function build() {
       DefineOptions(),
       typescript({
         tsconfigOverride: {
-          include: ['**/*'],
           compilerOptions: {
             module: 'ESNext',
-            declaration: false,
+            declaration: true,
           },
         },
       }),
       vue(),
       styles({ mode: ['extract', 'index.css'] }),
       json(),
+      // esbuild({
+      //   sourceMap: true,
+      //   target: 'es2018',
+      //   loaders: {
+      //     '.vue': 'ts',
+      //   },
+      // }),
       clear({ targets: ['./dist'] }),
     ],
     external: await generateExternal({ full: false }),
     treeshake: true,
   })
-
-  // generate code and a sourcemap
-  await bundle.generate(outputOptions)
 
   // or write the bundle to disk
   await bundle.write(outputOptions)
