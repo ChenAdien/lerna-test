@@ -6,6 +6,7 @@
   "homepage": "https://github.com/ChenAdien/lerna-test#readme",
   "license": "ISC",
   "main": "dist/esm/index.mjs",
+  "typings": "./dist/esm/index.d.ts",
   "files": [
     "dist"
   ],
