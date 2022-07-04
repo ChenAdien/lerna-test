@@ -22,7 +22,9 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "gulp"
+    "build": "gulp",
+    "fix": "eslint **/* --fix",
+    "prepare":"cd ../../ && husky install packages/components/husky"
   },
   "bugs": {
     "url": "https://github.com/ChenAdien/lerna-test/issues"
@@ -32,8 +34,19 @@
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@types/gulp": "^4.0.9",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
     "cpr": "^3.0.1",
+    "eslint": ">=5.16.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jsonc": "^2.3.1",
+    "eslint-plugin-markdown": "^2.2.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.1.1",
     "gulp": "^4.0.2",
+    "husky": "^8.0.1",
+    "prettier": "^2.7.1",
     "rollup-plugin-clear": "^2.0.7",
     "rollup-plugin-esbuild": "^4.9.1",
     "rollup-plugin-styles": "^4.0.0",

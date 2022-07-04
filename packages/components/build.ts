@@ -1,15 +1,15 @@
-import { ModuleInfo, OutputOptions, rollup } from 'rollup'
-import vue from '@vitejs/plugin-vue'
-import typescript from 'rollup-plugin-typescript2'
+import {ModuleInfo, OutputOptions, rollup} from 'rollup';
+import vue from '@vitejs/plugin-vue';
+import typescript from 'rollup-plugin-typescript2';
 // @ts-ignore
-import DefineOptions from 'unplugin-vue-define-options/rollup'
-import { nodeResolve } from '@rollup/plugin-node-resolve'
-import styles from 'rollup-plugin-styles'
+import defineOptions from 'unplugin-vue-define-options/rollup';
+import {nodeResolve} from '@rollup/plugin-node-resolve';
+import styles from 'rollup-plugin-styles';
 // @ts-ignore
-import clear from 'rollup-plugin-clear'
-import { generateExternal } from './utils/index'
-import json from '@rollup/plugin-json'
-import esbuild from 'rollup-plugin-esbuild'
+import clear from 'rollup-plugin-clear';
+import {generateExternal} from './utils/index';
+import json from '@rollup/plugin-json';
+import esbuild from 'rollup-plugin-esbuild';
 
 // function testPlugin() {
 //   return {
@@ -28,13 +28,15 @@ const outputOptions: OutputOptions = {
   dir: 'dist/esm',
   preserveModules: true,
   entryFileNames: '[name].mjs',
-}
+};
 export default async function build() {
   const bundle = await rollup({
     input: './index.ts',
     plugins: [
-      nodeResolve(),
-      DefineOptions(),
+      nodeResolve({
+        extensions: ['.mjs', '.js', '.json', '.ts'],
+      }),
+      defineOptions(),
       typescript({
         tsconfigOverride: {
           compilerOptions: {
@@ -44,21 +46,14 @@ export default async function build() {
         },
       }),
       vue(),
-      styles({ mode: ['extract', 'index.css'] }),
+      styles({mode: ['extract', 'index.css']}),
       json(),
-      // esbuild({
-      //   sourceMap: true,
-      //   target: 'es2018',
-      //   loaders: {
-      //     '.vue': 'ts',
-      //   },
-      // }),
-      clear({ targets: ['./dist'] }),
+      clear({targets: ['./dist']}),
     ],
-    external: await generateExternal({ full: false }),
+    external: await generateExternal({full: false}),
     treeshake: true,
-  })
+  });
 
   // or write the bundle to disk
-  await bundle.write(outputOptions)
+  await bundle.write(outputOptions);
 }

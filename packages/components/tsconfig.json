@@ -1,19 +1,27 @@
 {
-  "compilerOptions": {
-    "target": "esnext",
-    "useDefineForClassFields": true,
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "strict": true,
-    "jsx": "preserve",
-    "sourceMap": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "lib": ["esnext", "dom"],
-    // "declaration": true,
-    "skipLibCheck": true
-  },
-  // "include": ["lib/env.d.ts"]
-  "include": ["lib/**/*.vue", "lib/**/*.ts", "lib/**/*.d.ts", "types/*.d.ts"]
+    "compilerOptions": {
+        "target": "esnext",
+        "useDefineForClassFields": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "strict": true,
+        "jsx": "preserve",
+        "sourceMap": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "esModuleInterop": true,
+        "lib": [
+            "esnext",
+            "dom"
+        ],
+        // "declaration": true,
+        "skipLibCheck": true,
+    },
+    // "include": ["lib/env.d.ts"]
+    "include": [
+        "lib /**/*.vue",
+        "lib /**/*.ts",
+        "lib /**/*.d.ts",
+        "types/*.d.ts"
+    ]
 }

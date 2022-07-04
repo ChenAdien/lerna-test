@@ -1,5 +1,5 @@
 const buttonProps = {
-    content: String,
+  content: String,
 };
 
-export { buttonProps };
+export {buttonProps};

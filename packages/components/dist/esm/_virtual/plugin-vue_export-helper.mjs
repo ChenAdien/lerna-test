@@ -1,4 +1,4 @@
-var _export_sfc = (sfc, props) => {
+const _export_sfc = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
   for (const [key, val] of props) {
     target[key] = val;
@@ -6,4 +6,4 @@ var _export_sfc = (sfc, props) => {
   return target;
 };
 
-export { _export_sfc as default };
+export {_export_sfc as default};

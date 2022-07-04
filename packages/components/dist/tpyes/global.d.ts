@@ -1,4 +1,4 @@
-import { NOButton } from '@thermo-nano/components'
+import {NOButton} from '@thermo-nano/components';
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {

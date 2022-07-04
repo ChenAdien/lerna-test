@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
+import {ref} from 'vue';
 defineProps({
   text: String,
-})
+});
 </script>
 <template>
   <div>
