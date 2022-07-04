@@ -35,6 +35,12 @@ module.exports = {
         "no-undef": "off",
       },
     },
+    {
+      files: ["*.js"],
+      rules: {
+        "@typescript-eslint/no-var-requires": "off",
+      },
+    },
   ],
   plugins: ["vue", "@typescript-eslint"],
   rules: {

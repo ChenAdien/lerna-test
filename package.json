@@ -16,5 +16,10 @@
   },
   "peerDependencies": {
     "vue": "^3.2.0"
+  },
+  "dependencies": {
+    "@esbuild-kit/cjs-loader": "^2.3.0",
+    "cz-customizable": "^6.9.0",
+    "global": "^4.4.0"
   }
 }
