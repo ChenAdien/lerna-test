@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import {ref, defineComponent} from 'vue';
-import {buttonProps} from './button';
+import { ref, defineComponent } from "vue";
+import { buttonProps } from "./button";
 defineProps(buttonProps);
 const num = ref<number>(1);
 function click() {
@@ -10,10 +10,7 @@ function click() {
 <template>
   <div>
     <div>{{ num }}</div>
-    <button
-      class="red"
-      @click="click"
-    >
+    <button class="red" @click="click">
       {{ content }}
     </button>
   </div>

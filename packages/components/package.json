@@ -23,8 +23,8 @@
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
     "build": "gulp",
-    "fix": "eslint **/* --fix",
-    "prepare":"cd ../../ && husky install packages/components/husky"
+    "fix": "eslint **/*.{js,ts,json,md,vue} --fix",
+    "prepare": "cd ../../ && husky install packages/components/husky"
   },
   "bugs": {
     "url": "https://github.com/ChenAdien/lerna-test/issues"
