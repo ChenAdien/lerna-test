@@ -1,6 +1,7 @@
 {
   "name": "@thermo-nano/hooks",
   "version": "1.0.0",
+  "private": true,
   "description": "> TODO: description",
   "author": "Chen_Z <38248854+ChenAdien@users.noreply.github.com>",
   "homepage": "https://github.com/ChenAdien/lerna-test#readme",
