@@ -1,5 +1,5 @@
 const buttonProps = {
-  content: String,
+    content: { type: String, default: "Click" },
 };
 
-export {buttonProps};
+export { buttonProps };

@@ -18,6 +18,6 @@ console.log(111);
 </template>
 <style lang="scss">
 .red {
-  color: red;
+  color: var(--base-color);
 }
 </style>

@@ -7,6 +7,14 @@
   "license": "ISC",
   "main": "dist/esm/index.mjs",
   "typings": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/esm/index.mjs"
+    },
+    "./assets/*": "./dist/esm/assets/*",
+    "./types/*": "./types/*"
+  },
   "files": [
     "dist"
   ],
@@ -29,7 +37,6 @@
     "url": "https://github.com/ChenAdien/lerna-test/issues"
   },
   "devDependencies": {
-    "@commitlint/config-conventional": "^17.0.3",
     "@esbuild-kit/cjs-loader": "^2.3.0",
     "@pnpm/types": "^8.4.0",
     "@rollup/plugin-json": "^4.1.0",
@@ -37,10 +44,7 @@
     "@types/gulp": "^4.0.9",
     "@typescript-eslint/eslint-plugin": "^5.30.0",
     "@typescript-eslint/parser": "^5.30.0",
-    "commitizen": "^4.2.4",
-    "commitlint": "^17.0.3",
     "cpr": "^3.0.1",
-    "cz-conventional-changelog": "^3.3.0",
     "eslint": ">=5.16.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^8.5.0",
@@ -56,14 +60,8 @@
     "rollup-plugin-styles": "^4.0.0",
     "rollup-plugin-typescript2": "^0.32.1",
     "sass": "^1.53.0",
-    "ts-morph": "^15.1.0",
     "ts-node": "^10.8.1",
     "typescript": "^4.7.4",
     "unplugin-vue-define-options": "^0.6.1"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   }
 }

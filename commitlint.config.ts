@@ -1,4 +1,3 @@
-import { execSync } from "child_process";
 import fg from "fast-glob";
 
 const getPackages = (packagePath:any) =>
@@ -6,36 +5,9 @@ const getPackages = (packagePath:any) =>
 
 const scopes = [
   ...getPackages("packages"),
-  "docs",
-  "play",
-  "project",
-  "core",
-  "style",
-  "ci",
-  "dev",
-  "deploy",
-  "other",
-  "typography",
-  "color",
-  "border",
-  "var",
-  "ssr",
+  ...getPackages('packages/components/lib/'),
+  'project'
 ];
-
-const gitStatus = execSync("git status --porcelain || true")
-  .toString()
-  .trim()
-  .split("\n");
-
-const scopeComplete = gitStatus
-  .find((r) => ~r.indexOf("M  packages"))
-  ?.replace(/\//g, "%%")
-  ?.match(/packages%%((\w|-)*)/)?.[1];
-
-const subjectComplete = gitStatus
-  .find((r) => ~r.indexOf("M  packages/components"))
-  ?.replace(/\//g, "%%")
-  ?.match(/packages%%components%%((\w|-)*)/)?.[1];
 
 export default {
   rules: {
@@ -82,27 +54,16 @@ export default {
       2,
       "always",
       [
-        "build",
-        "chore",
-        "ci",
-        "docs",
-        "feat",
+        "add",
         "fix",
-        "perf",
-        "refactor",
-        "revert",
-        "release",
+        "docs",
         "style",
+        "refactor",
+        "perf",
         "test",
-        "improvement",
+        "utils",
+        "back"
       ],
     ],
-  },
-  prompt: {
-    defaultScope: scopeComplete,
-    customScopesAlign: !scopeComplete ? "top" : "bottom",
-    defaultSubject: subjectComplete && `[${subjectComplete}] `,
-    allowCustomIssuePrefixs: false,
-    allowEmptyIssuePrefixs: false,
   },
 };

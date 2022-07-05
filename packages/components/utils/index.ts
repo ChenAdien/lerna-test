@@ -1,6 +1,7 @@
 import type { ProjectManifest } from "@pnpm/types";
 import type { Plugin } from "vue";
 import pkg from "../package.json";
+import { useCssVars } from "vue";
 type SFCWithInstall<T> = T & Plugin;
 export const withInstall = <T, E extends Record<string, any>>(
   main: T,
@@ -8,7 +9,9 @@ export const withInstall = <T, E extends Record<string, any>>(
 ) => {
   (main as SFCWithInstall<T>).install = (app): void => {
     for (const comp of [main, ...Object.values(extra ?? {})]) {
-      app.component(comp.name, comp);
+      console.log(comp);
+
+      app.component("NO" + comp.__name, comp);
     }
   };
 
@@ -45,3 +48,4 @@ export const generateExternal = async (options: { full: boolean }) => {
     );
   };
 };
+export const useCssVars;

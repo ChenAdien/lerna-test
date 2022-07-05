@@ -9,7 +9,6 @@ import styles from "rollup-plugin-styles";
 import clear from "rollup-plugin-clear";
 import { generateExternal } from "./utils/index";
 import json from "@rollup/plugin-json";
-import esbuild from "rollup-plugin-esbuild";
 
 // function testPlugin() {
 //   return {
@@ -28,6 +27,7 @@ const outputOptions: OutputOptions = {
   dir: "dist/esm",
   preserveModules: true,
   entryFileNames: "[name].mjs",
+  assetFileNames: "assets/[name][extname]",
 };
 export default async function build() {
   const bundle = await rollup({
@@ -46,7 +46,9 @@ export default async function build() {
         },
       }),
       vue(),
-      styles({ mode: ["extract", "index.css"] }),
+      styles({
+        mode: ["extract", "index.css"],
+      }),
       json(),
       clear({ targets: ["./dist"] }),
     ],

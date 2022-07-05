@@ -1,0 +1,6 @@
+:root {
+  --base-color:red ;
+}
+.red {
+  color: var(--base-color);
+}

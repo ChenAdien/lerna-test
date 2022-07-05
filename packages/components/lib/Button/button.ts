@@ -1,3 +1,3 @@
 export const buttonProps = {
-  content: { type: Stirng, default: "Click" },
+  content: { type: String, default: "Click" },
 };

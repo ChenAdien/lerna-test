@@ -1,3 +1,6 @@
 export declare const buttonProps: {
-    content: StringConstructor;
+    content: {
+        type: StringConstructor;
+        default: string;
+    };
 };

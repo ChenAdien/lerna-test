@@ -1,7 +1,6 @@
 import { series } from "gulp";
 import build from "./build";
 import cpr from "cpr";
-import { Project } from "ts-morph";
 async function copyTypes() {
   console.log("Start copy types");
 
@@ -17,20 +16,5 @@ async function copyTypes() {
       if (err) console.log(err);
     }
   );
-}
-function testType() {
-  const project = new Project({
-    compilerOptions: {
-      emitDeclarationOnly: true,
-      outDir: "./dist/tpyes",
-      baseUrl: "./",
-      preserveSymlinks: true,
-      skipLibCheck: true,
-      noImplicitAny: false,
-    },
-    tsConfigFilePath: "./tsconfig.json",
-    skipAddingFilesFromTsConfig: true,
-  });
-  project.addSourceFilesAtPaths(["./src/components"]);
 }
 export default series(build, copyTypes);

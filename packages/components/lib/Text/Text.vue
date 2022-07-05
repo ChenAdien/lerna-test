@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 defineProps({
-  text: String,
+  text: { type: String, default: "1" },
 });
 </script>
 <template>

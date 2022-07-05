@@ -1,0 +1,25 @@
+{
+  "name": "@thermo-nano/hooks",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "Chen_Z <38248854+ChenAdien@users.noreply.github.com>",
+  "homepage": "https://github.com/ChenAdien/lerna-test#readme",
+  "license": "ISC",
+  "main": "lib/hooks.js",
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChenAdien/lerna-test.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/ChenAdien/lerna-test/issues"
+  }
+}
