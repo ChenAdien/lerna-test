@@ -1,0 +1,32 @@
+{
+  "name": "@thermo-nano/components",
+  "version": "1.0.8",
+  "description": "> TODO: description",
+  "author": "Chen_Z <38248854+ChenAdien@users.noreply.github.com>",
+  "homepage": "https://github.com/ChenAdien/lerna-test#readme",
+  "license": "ISC",
+  "main": "dist/esm/index.mjs",
+  "typings": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/esm/index.mjs"
+    },
+    "./assets/*": "./dist/esm/assets/*",
+    "./types/*": "./types/*"
+  },
+  "files": ["dist"],
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChenAdien/lerna-test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ChenAdien/lerna-test/issues"
+  }
+}

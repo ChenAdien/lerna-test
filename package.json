@@ -6,7 +6,8 @@
   ],
   "scripts": {
     "dev:play": "lerna exec --scope playground -- yarn dev",
-    "build:components": "node ./build/components.mjs"
+    "build:components": "node ./build/components.mjs",
+    "commit": "cz-customizable"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.3",
