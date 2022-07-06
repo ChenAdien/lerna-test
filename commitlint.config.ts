@@ -6,7 +6,8 @@ const getPackages = (packagePath:any) =>
 const scopes = [
   ...getPackages("packages"),
   ...getPackages('packages/components/lib/'),
-  'project'
+  'project',
+  "release"
 ];
 
 export default {
@@ -62,6 +63,7 @@ export default {
         "perf",
         "test",
         "utils",
+        "chore",
         "back"
       ],
     ],
