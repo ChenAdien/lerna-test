@@ -6,7 +6,7 @@ const num = ref<number>(1);
 function click() {
   num.value += 1;
 }
-console.log(111);
+console.log(222);
 </script>
 <template>
   <div>
